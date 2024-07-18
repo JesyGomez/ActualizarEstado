@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualización de Estado de Leads</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Actualización de Estado de Leads</h1>
+    <div class="tabs">
+      <button class="tab-button" onclick="showTab('updateForm')">Actualizar Estado</button>
+      <button class="tab-button" onclick="showTab('logTable')">Registro de Cambios</button>
+    </div>
+    <div id="updateForm" class="tab-content">
+      <form id="leadForm">
+        <label for="leadSelect">Seleccionar Lead:</label>
+        <select id="leadSelect"></select>
+        <label for="statusSelect">Seleccionar Estado:</label>
+        <select id="statusSelect">
+          <option value="Contactado">Contactado</option>
+          <option value="Esperando respuesta">Esperando respuesta</option>
+          <option value="En llamada">En llamada</option>
+          <option value="Win">Win</option>
+          <option value="Lose">Lose</option>
+        </select>
+        <button type="button" onclick="updateLeadStatus()">Actualizar Estado</button>
+      </form>
+    </div>
+    <div id="logTable" class="tab-content" style="display:none;">
+      <h2>Registro de Cambios</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Lead</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
